@@ -1,0 +1,13 @@
+{
+  "customer": {
+    "firstname": "Phan",
+    "lastname": "Chuong",
+    "stress_address": "42 Vinh Phuc",
+    "state": "Alaska",
+    "city": "ha noi",
+    "country": "Việt Nam",
+    "zip_code": "100000",
+    "email": "chuong@mailinator.com",
+    "phone_number": "0983145327"
+  }
+}
