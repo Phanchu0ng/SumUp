@@ -38,13 +38,35 @@ public class LoginStep {
         // check user log in successfully
         Assert.assertTrue("Login Successfully successfull",homepage.checkUserLoggedIn());
     }
-    @When("Login to website with username and password")
+    @And("Login to website with username and password")
     public void Login(DataTable table) {
-        while (homepage.checkUserLoggedIn() == false) {
+//        while (homepage.checkUserLoggedIn() != true) {
+            System.out.println("adhsdg");
             Map<String, String> map = (Map) table.asMaps(String.class, String.class).get(0);
             login.enterEmail(map.get("email"));
             login.enterPass(map.get("pass"));
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             login.clickBtn();
-        }
+//        }
+    }
+    @Then("Check message display under email is correctlly")
+    public void messageDisplayUnderemail(){
+        Assert.assertEquals("This is a required field.",login.getMessageEmailerror());
+    }
+    @And("Check message display under Pass is correctlly")
+    public void messageDisplayUnderPass(){
+        Assert.assertEquals("This is a required field.",login.getMessagePassError());
+    }
+    @Then("Verify when email invalid format")
+    public void messageDisplayUnderInvalidEmailFormat(){
+        Assert.assertEquals("Please enter a valid email address (Ex: johndoe@domain.com).",login.getMessageEmailerror());
+    }
+    @Then("Verify When login with invalid account")
+    public void messageDisplayWhenInvalidAccount(){
+        Assert.assertEquals("The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",login.getMessage());
     }
 }

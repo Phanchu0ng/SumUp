@@ -34,6 +34,11 @@ public class LoginPage extends BasePage {
         this.actionHelper.sendKey(By.id(ID_PASS),pass);
     }
     public void clickBtn(){
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         this.actionHelper.click(xpath(this.XPATH_BTNSUBMITLOGIN));
     }
     public String getMessage(){

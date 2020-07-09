@@ -74,6 +74,7 @@ public class TestBasePage {
             return Files.readAllLines(Paths.get(file.getAbsolutePath()), charset);
         }
 
+
     }
 
 
