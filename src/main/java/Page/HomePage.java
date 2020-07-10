@@ -17,7 +17,7 @@ public class HomePage extends BasePage{
         String XPATH_LOGGED_IN = "//div[@class='panel header']//span[@class='logged-in']";
         String XPATH_EXPANDED_MENU="//div[@class='panel header']//button[@class='action switch']";
         String XPATH_BUTTON_SIGN_OUT="//div[@class='panel header']//div[@class='customer-menu']//li[@class='authorization-link']";
-       String XPATH_FIRST_MENU="//span[text()='%s']";
+       String XPATH_FIRST_MENU="//a[@role='menuitem'][.//span[text()='%s']]";
        String XPATH_SECOND_MENU="//li[@role='presentation'][.//span[text()='%s']]//span[text()='%s']";
        String XPATH_THIRD_MEMU="//li[@role='presentation'][.//span[text()='%s']]//span[text()='%s']";
        String XPATH_BREADCRUMS="//div[@class='breadcrumbs']//a[normalize-space(text())='%s'] ";
@@ -60,7 +60,9 @@ public class HomePage extends BasePage{
         }
         public void moveToTopMenu(String firstmenu, String secondmenu, String thirdmenu){
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_FIRST_MENU,firstmenu)));
+            System.out.printf(String.format(XPATH_FIRST_MENU,firstmenu));
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_SECOND_MENU,firstmenu,secondmenu)));
+            System.out.println(String.format(XPATH_SECOND_MENU,firstmenu,secondmenu));
             this.actionHelper.click(By.xpath(String.format(XPATH_THIRD_MEMU, firstmenu, thirdmenu)));
 
         }
