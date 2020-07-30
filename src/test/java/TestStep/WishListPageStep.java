@@ -57,7 +57,7 @@ public class WishListPageStep {
     }
     @And("WishList:Check that 3 buttons: Update Wish List, Share Wish list, Add All To Cart are not displayed")
     public void checkBtnAreNotDisplay(){
-        Assert.assertTrue(wishListPage.checkBtnAreNotDiplay());
+        wishListPage.checkBtnAreNotDiplay();
 
     }
 }

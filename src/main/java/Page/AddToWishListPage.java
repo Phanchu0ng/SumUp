@@ -75,9 +75,9 @@ public class AddToWishListPage extends BasePage {
     }
 
     public boolean checkBtnAreNotDiplay(){
-        this.actionHelper.checkElementDisplayed(By.xpath(XPATH_BTN_UPDATE));
-        this.actionHelper.checkElementDisplayed(By.xpath(XPATH_BTN_SHARE));
-        this.actionHelper.checkElementDisplayed(By.xpath(XPATH_BTN_ADDTOCART));
+        this.actionHelper.checkElementExist(By.xpath(XPATH_BTN_UPDATE),60);
+        this.actionHelper.checkElementExist(By.xpath(XPATH_BTN_SHARE),60);
+        this.actionHelper.checkElementExist(By.xpath(XPATH_BTN_ADDTOCART),60);
         return false;
     }
 }
