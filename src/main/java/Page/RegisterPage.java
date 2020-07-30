@@ -73,4 +73,22 @@ public class RegisterPage extends BasePage{
         String reEnterPassErrorMsg =driver.findElement(By.id(this.ID_REENTER_PASS_EMPTY_ERROR)).getText();
         return  reEnterPassErrorMsg;
     }
+    public boolean fieldFirstNameDisplay(){
+        return this.actionHelper.checkElementExist(ID_FIRSTNAME,60);
+    }
+    public boolean fieldLastNameDisplay(){
+        return this.actionHelper.checkElementExist(ID_LASTNAME,60);
+    }
+    public boolean fieldEmailDisplay(){
+        return this.actionHelper.checkElementExist(ID_EMAILADDRESS,60);
+    }
+    public boolean fieldPassDisplay(){
+        return this.actionHelper.checkElementExist(ID_PASSWORD,60);
+    }
+    public boolean fieldPassConfirmDisplay(){
+        return this.actionHelper.checkElementExist(ID_PASSCONFIRM,60);
+    }
+    public boolean fieldbuttonCreateUser(){
+        return this.actionHelper.checkElementExist(XPATH_BUTTONCREATEACCOUNT,60);
+    }
 }

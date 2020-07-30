@@ -44,7 +44,7 @@ public class HomePage extends BasePage{
             this.actionHelper.click(By.xpath(this.XPATH_BUTTON_SIGN_OUT));
         }
         public boolean checkUserLogOut(){
-            return this.actionHelper.checkElementDisplay(By.xpath(this.XPATH_LOGGED_IN));
+            return this.actionHelper.checkElementExist(By.xpath(this.XPATH_LOGGED_IN),60);
         }
         public String getPageTitle(){
             String registerPageTitle=driver.getTitle();
@@ -59,6 +59,11 @@ public class HomePage extends BasePage{
             return this.actionHelper.checkElementDisplay(By.xpath(XPATH_EMPTYRESULT_MESSAGE),60);
         }
         public void moveToTopMenu(String firstmenu, String secondmenu, String thirdmenu){
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_FIRST_MENU,firstmenu)));
             System.out.printf(String.format(XPATH_FIRST_MENU,firstmenu));
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_SECOND_MENU,firstmenu,secondmenu)));

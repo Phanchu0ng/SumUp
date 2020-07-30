@@ -9,11 +9,20 @@ Feature: Check Action at Homepage
     Given Go to home page
     When Go to Login page
     Then Verify Check Title of page is Customer Login
+    And Login Page: Verify Textbox Email is display
+    And Login Page: Verify Textbox Pass is display
+    And Login Page: Verify Button Login is display
 
   Scenario: Check go to Create New Customer Account Page when click on create new account
     Given Go to home page
     When Click on Create New account
     Then Verify Check Title of page is Create New Customer Account
+    And RegisterPage: Verify First Name field is display
+    And RegisterPage: Verify Last Name field is display
+    And RegisterPage: Verify Email field is display
+    And RegisterPage: Verify PassWord field is display
+    And RegisterPage: Verify Confirm PassWord field is display
+    And RegisterPage: Verify Button create user is display
 
 
   Scenario: Check that user can open a category from dropdownlist on header bar (Men >Tops >Tees)

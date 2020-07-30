@@ -12,8 +12,6 @@ public class LoginPage extends BasePage {
     String XPATH_MESSAGE_WHEN_LOGIN_FAILED="//div[@class='page messages']//div[@class='messages']//div[@data-bind='html: message.text']";
     String XPATH_MESSAGE_EMAIL_ERROR="//div[@id='email-error']";
     String XPATH_MESSAGE_PASS_ERROR="//div[@id='pass-error']";
-    String ID_CAPTCHA_EMAIL_LOGIN="captcha_user_login";
-    String ID_CAPTCHA_USER_LOGIN_ERROR ="captcha_user_login-error";
     public  LoginPage(WebDriver driver){
         super(driver);
     }
@@ -56,12 +54,13 @@ public class LoginPage extends BasePage {
         String passErrorMsg =driver.findElement(By.xpath(XPATH_MESSAGE_PASS_ERROR)).getText();
         return passErrorMsg;
     }
-    public boolean checkCaptchaEmailLoginDisplay(){
-        return this.actionHelper.checkElementDisplay(By.xpath(ID_CAPTCHA_USER_LOGIN_ERROR));
+    public boolean checkTextboxemailIsDisplay(){
+        return this.actionHelper.checkElementExist(By.id(ID_EMAIL),60);
     }
-    public  String getMessageCaptchaError() {
-        this.waitUltility.waitUntilVisibility(xpath(ID_CAPTCHA_EMAIL_LOGIN),60);
-        String captchaErrorMsg =driver.findElement(By.id(ID_CAPTCHA_EMAIL_LOGIN)).getText();
-        return captchaErrorMsg;
+    public boolean checkTextboxPassIsDisplay(){
+        return this.actionHelper.checkElementExist(By.id(ID_PASS),60);
+    }
+    public boolean checkButtonSubmitIsDisplay(){
+        return this.actionHelper.checkElementExist(By.xpath(XPATH_BTNSUBMITLOGIN),60);
     }
 }

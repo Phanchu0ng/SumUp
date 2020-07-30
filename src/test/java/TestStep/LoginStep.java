@@ -69,4 +69,16 @@ public class LoginStep {
     public void messageDisplayWhenInvalidAccount(){
         Assert.assertEquals("The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.",login.getMessage());
     }
+    @And("Login Page: Verify Textbox Email is display")
+    public void verifyTextboxEmailisDisplay(){
+        Assert.assertTrue(login.checkTextboxemailIsDisplay());
+    }
+    @And("Login Page: Verify Textbox Pass is display")
+    public void verifyTextboxPassisDisplay(){
+        Assert.assertTrue(login.checkTextboxPassIsDisplay());
+    }
+    @And("Login Page: Verify Button Login is display")
+    public void verifyButtonLoginisDisplay(){
+        Assert.assertTrue(login.checkButtonSubmitIsDisplay());
+    }
 }

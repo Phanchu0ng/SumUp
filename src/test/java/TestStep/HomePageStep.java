@@ -33,7 +33,7 @@ public class HomePageStep {
     }
     @Then("Verify Log out success")
     public void verifyLogOutSuccess(){
-        Assert.assertTrue(homepage.checkUserLogOut());
+        Assert.assertFalse(homepage.checkUserLogOut());
     }
     @Given("Click on Create New account")
     public void clickOnCreateNewaccount(){

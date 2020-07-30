@@ -50,4 +50,28 @@ public class RegisterPageStep {
         registerPage.clickBtnSubmit();
 //        }
     }
+    @And("RegisterPage: Verify First Name field is display")
+    public void verifyFirstNameDisplay(){
+        Assert.assertTrue(registerPage.fieldFirstNameDisplay());
+    }
+    @And("RegisterPage: Verify Last Name field is display")
+    public void verifyLastNameDisplay(){
+        Assert.assertTrue(registerPage.fieldLastNameDisplay());
+    }
+    @And("RegisterPage: Verify Email field is display")
+    public void verifyemailDisplay(){
+        Assert.assertTrue(registerPage.fieldEmailDisplay());
+    }
+    @And("RegisterPage: Verify PassWord field is display")
+    public void verifyPassDisplay(){
+        Assert.assertTrue(registerPage.fieldPassDisplay());
+    }
+    @And("RegisterPage: Verify Confirm PassWord field is display")
+    public void verifyConfirmPassDisplay(){
+        Assert.assertTrue(registerPage.fieldPassConfirmDisplay());
+    }
+    @And("RegisterPage: Verify Button create user is display")
+    public void verifyButtonCreateUserDisplay(){
+        Assert.assertTrue(registerPage.fieldbuttonCreateUser());
+    }
 }
