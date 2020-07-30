@@ -9,7 +9,7 @@ import java.security.PublicKey;
 public class PaymentPage extends BasePage{
     String XPATH_PRODUCT_NAME="//div[@class='product-item-name-block']//strong[@class='product-item-name'][normalize-space(text())='%s']";
     String XPATH_PRODUCT_SUBTOTAL="//div[@class='product-item-details']//strong[@class='product-item-name'][normalize-space(text())='%s']//following::span[@class='cart-price']/span";
-    String XPATH_BUTTON_PLACE_ORDER="//button[@class='action primary checkout']";
+    String XPATH_BUTTON_PLACE_ORDER="//div[@class='payment-method _active']//button[@class='action primary checkout']";
     String XPATH_BUTTON_EXPAND_CART="//div[@class='title']";
     String XPATH_PRODUCT_NAME_AT_CART_PAGE="//tr[@class='item-info']//strong[@class='product-item-name']/a[text()='%s]";
     String XPATH_SHIPPING_FEE_PAYMENT_PAGE="//tr[@class='totals shipping excl']//span[@class='price']";

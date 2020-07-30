@@ -14,12 +14,16 @@ public class ProductDeatailPage extends BasePage {
     String XPATH_ADD_TO_WISHLIST="//div[@class='product-addto-links']//span[text()='Add to Wish List']";
     String XPATH_ADD_PRODUCT_TO_COMPARE="//div[@class='product-info-main']//span[text()='Add to Compare']";
     String XPATH_ADD_TO_COMPARELIST_SUCCESS="//div[@data-ui-id='message-success'][.//a[text()='comparison list']]";
+    String XPATH_PRODUCT_NAME="//h1[@class='page-title']/span[text()='%s']";
     List<Product> list;
     public ProductDeatailPage(WebDriver driver) {
         super(driver);
 
     }
 
+    public boolean productNameDisplay(String name){
+        return this.actionHelper.checkElementDisplay(By.xpath(String.format(XPATH_PRODUCT_NAME,name)));
+    }
     public void open(String url) {
         this.driver.get(url);
     }

@@ -24,8 +24,14 @@ wait.until(ExpectedConditions.presenceOfElementLocated(location));
         WebDriverWait wait = new WebDriverWait(this.driver,(long)waittingTime);
         wait.until(ExpectedConditions.elementToBeClickable(location));
     }
-    public void waitUntilExist(By xpath) {
+    public void sleep(int time) {
+        try {
+            Thread.sleep(time * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
 
 
 }

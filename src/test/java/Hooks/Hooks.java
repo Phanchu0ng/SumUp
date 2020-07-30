@@ -45,7 +45,7 @@ public class Hooks {
         System.out.println("before");
         TestBasePage.openBrowser();
     }
-    @Before("@ChangePass,@ChangeBilling,@wishlist")
+    @Before("@ChangePass,@ChangeBilling,@wishlist,@sortPrice")
     public void openBrowserWithLogin() {
         System.out.println("before");
         TestBasePage.openBrowser();

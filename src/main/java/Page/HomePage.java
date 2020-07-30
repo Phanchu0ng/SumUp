@@ -22,6 +22,7 @@ public class HomePage extends BasePage{
        String XPATH_THIRD_MEMU="//li[@role='presentation'][.//span[text()='%s']]//span[text()='%s']";
        String XPATH_BREADCRUMS="//div[@class='breadcrumbs']//a[normalize-space(text())='%s'] ";
        String XPATH_CAT_BREADCRUMS ="//div[@class='breadcrumbs']//strong[normalize-space(text())='%s']";
+       String XPATH_PRODUCT="//div[@class='product-item-info']//div[.//a[normalize-space(text())='%s']]";
         public HomePage(WebDriver driver){
             super(driver);
         }
@@ -65,9 +66,7 @@ public class HomePage extends BasePage{
                 e.printStackTrace();
             }
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_FIRST_MENU,firstmenu)));
-            System.out.printf(String.format(XPATH_FIRST_MENU,firstmenu));
             this.actionHelper.moveToElement(By.xpath(String.format(XPATH_SECOND_MENU,firstmenu,secondmenu)));
-            System.out.println(String.format(XPATH_SECOND_MENU,firstmenu,secondmenu));
             this.actionHelper.click(By.xpath(String.format(XPATH_THIRD_MEMU, firstmenu, thirdmenu)));
 
         }
@@ -78,7 +77,12 @@ public class HomePage extends BasePage{
             return this.actionHelper.checkElementDisplay(By.xpath(String.format(XPATH_CAT_BREADCRUMS,selectedCat)),60);
         }
 
-
+        public void clickOnProduct(String name){
+        this.actionHelper.click(By.xpath(String.format(XPATH_PRODUCT,name)));
+        }
+        public boolean checkProductIsDisplayInSearchResult(String name){
+        return this.actionHelper.checkElementDisplay(By.xpath(String.format(XPATH_PRODUCT,name)));
+        }
 
     }
 

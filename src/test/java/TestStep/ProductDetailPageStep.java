@@ -41,4 +41,8 @@ public class ProductDetailPageStep {
         }
 
     }
+    @And("^Go to Product detail page with product name (.+?)$")
+    public void checkGotoProductDetaiPage(String name){
+        productDetailPage.productNameDisplay(name);
+    }
 }

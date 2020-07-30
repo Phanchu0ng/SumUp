@@ -3,9 +3,9 @@ Feature: Check Place Order
   Scenario: Check Place an order success
     Given Add Product to Cart
       |product|
-      |product1|
-      |product2|
-      |product3|
+      |Juno Jacket|
+      |Portia Capri|
+      |Lando Gym Jacket|
     And Cart Page:Go to Shipping page
     And Shipping page: Fill Shipping information
     And Shipping page: Choose Shipping method as Fixed

@@ -4,12 +4,12 @@ Feature: Add Product To Wish List Test Case
   Scenario: Add Product To Wish List Successful
     Given click add product to wishlist
       |product|
-      |product1|
-      |product2|
+      |Juno Jacket|
+      |Portia Capri|
     Then WishList: Verify Product in Wish-List Page
       |product|
-      |product1|
-      |product2|
+      |Juno Jacket|
+      |Portia Capri|
 
   @wishlist
   Scenario: Add Product To Wish List Successful
@@ -22,6 +22,6 @@ Feature: Add Product To Wish List Test Case
      Then WishList:Check that 3 buttons: Update Wish List, Share Wish list, Add All To Cart are not displayed
      And click add product to wishlist
        |product|
-       |product1|
+       |Portia Capri|
      And WishList: Go To WishList Page
      And WishList:Check that 3 buttons: Update Wish List, Share Wish list, Add All To Cart are  displayed

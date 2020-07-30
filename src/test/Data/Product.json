@@ -1,19 +1,19 @@
 {
-  "product1": {
+  "Juno Jacket": {
     "url": "https://demo.smartosc.com/juno-jacket.html",
     "name": "Juno Jacket",
     "price": "77,00 US$",
     "size": "L",
     "color": "Green"
   },
-  "product2": {
+  "Portia Capri": {
     "url": "https://demo.smartosc.com/portia-capri.html",
     "name": "Portia Capri",
     "price": "49,00 US$",
     "size": "28",
     "color": "Orange"
   },
-  "product3": {
+  "Lando Gym Jacket": {
     "url": "https://demo.smartosc.com/lando-gym-jacket.html",
     "name": "Lando Gym Jacket",
     "price": "99,00 US$",
