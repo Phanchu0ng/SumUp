@@ -7,6 +7,7 @@ import Ultilities.TestBasePage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 
@@ -31,6 +32,11 @@ public class WishListPageStep {
         }
 
     }
+    @When("Wishlist: Go to Wishlist Page when have no product")
+    public void GotoWishListWhenHaveNoItems(){
+        wishListPage.openWishListPage();
+        Assert.assertTrue(wishListPage.checkWishListPageIsEmpty());
+    }
     @And("WishList: Click Remove product from wishlist")
     public void removeProductFromWishList(){
         wishListPage.removeProductWishList();
@@ -42,5 +48,16 @@ public class WishListPageStep {
     @Given("WishList: Go To WishList Page")
     public void goToWishListPage(){
         wishListPage.openWishListPage();
+    }
+    @And("WishList:Check that 3 buttons: Update Wish List, Share Wish list, Add All To Cart are  displayed")
+    public void btnAreDisplay(){
+        Assert.assertTrue(wishListPage.checkBtnUpdateWishListDisplay());
+        Assert.assertTrue(wishListPage.checkBtnUpdateWishListDisplay());
+        Assert.assertTrue(wishListPage.checkBtnAddAllToCartDisplay());
+    }
+    @And("WishList:Check that 3 buttons: Update Wish List, Share Wish list, Add All To Cart are not displayed")
+    public void checkBtnAreNotDisplay(){
+        Assert.assertTrue(wishListPage.checkBtnAreNotDiplay());
+
     }
 }

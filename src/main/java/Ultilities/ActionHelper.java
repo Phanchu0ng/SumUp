@@ -85,5 +85,9 @@ public class ActionHelper {
             return false;
         }
     }
+    public boolean checkElementDisplayed(By location){
+        return this.driver.findElement(location).isDisplayed();
+
+    }
 
 }
