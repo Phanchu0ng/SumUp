@@ -18,7 +18,7 @@ public class BasePage {
     }
 
     public void waitLoadingInvisibility() {
-        this.waitUltility.waitUntilExist(By.xpath(this.XPATH_LOADING));
+        this.waitUltility.waitUntilExists(By.xpath(this.XPATH_LOADING),60);
     }
 }
 

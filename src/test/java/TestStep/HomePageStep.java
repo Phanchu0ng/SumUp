@@ -33,7 +33,7 @@ public class HomePageStep {
     }
     @Then("Verify Log out success")
     public void verifyLogOutSuccess(){
-        Assert.assertFalse(homepage.checkUserLogOut());
+        homepage.checkUserLogOut();
     }
     @Given("Click on Create New account")
     public void clickOnCreateNewaccount(){
@@ -65,5 +65,13 @@ public class HomePageStep {
     @And("^Check Selected catname display in breadcrumbs as (.+?)$")
     public  void verifySelectedCatNameDisplayInBreadCrumbs(String selectedCat){
         Assert.assertTrue(homepage.selectedCatNameIsDisplay(selectedCat));
+    }
+    @And("^Click on product (.+?)$")
+    public void clickOnProduct(String name){
+        homepage.clickOnProduct(name);
+    }
+    @Then("^Product (.+?) is existing in Search result$")
+    public void verifyProductExistInSearchResult(String name){
+        Assert.assertTrue(homepage.checkProductIsDisplayInSearchResult(name));
     }
 }

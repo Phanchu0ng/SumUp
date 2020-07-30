@@ -5,6 +5,7 @@ import Page.CartPage;
 import Page.HomePage;
 import Page.LoginPage;
 import Ultilities.TestBasePage;
+import Ultilities.Waitting;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -45,7 +46,7 @@ public class Hooks {
         System.out.println("before");
         TestBasePage.openBrowser();
     }
-    @Before("@ChangePass,@ChangeBilling,@wishlist,@sortPrice")
+    @Before("@ChangePass, @ChangeBilling, @wishlist, @sortPrice")
     public void openBrowserWithLogin() {
         System.out.println("before");
         TestBasePage.openBrowser();
@@ -54,6 +55,8 @@ public class Hooks {
         homepage.Open().clickOnSignin();
         loginPage.login("chuongpt@maillinator.com", "123456a@");
         loginPage.clickBtn();
+        Waitting waitting = new Waitting(TestBasePage.getDriver());
+        waitting.waitForPageLoad();
     }
     @After
     public void tearDown(Scenario scenario) {

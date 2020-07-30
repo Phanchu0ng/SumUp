@@ -45,7 +45,8 @@ public class HomePage extends BasePage{
             this.actionHelper.click(By.xpath(this.XPATH_BUTTON_SIGN_OUT));
         }
         public boolean checkUserLogOut(){
-            return this.actionHelper.checkElementExist(By.xpath(this.XPATH_LOGGED_IN),60);
+            this.actionHelper.checkElementExist(By.xpath(this.XPATH_LOGGED_IN),60);
+            return false;
         }
         public String getPageTitle(){
             String registerPageTitle=driver.getTitle();

@@ -5,6 +5,11 @@ Feature: Check Action at Homepage
     When Enter search value as hjhjkk
     Then No result return
 
+  Scenario: Check that after entering a valid title (Ex: Hero Hoodie) in the search input then search, results are returned
+    Given Go to Login page
+    When Enter search value as Hero Hoodie
+    Then Product Hero Hoodie is existing in Search result
+
   Scenario: Check go to Login Page when click on sign in
     Given Go to home page
     When Go to Login page
@@ -33,4 +38,9 @@ Feature: Check Action at Homepage
     Then Check Catname Display On BreadCrumbs as Men
     And Check Catname Display On BreadCrumbs as Tops
     And Check Selected catname display in breadcrumbs as Tees
+
+  Scenario: Check Go to product detail page when click on product
+    Given Go to home page
+    When Click on product Breathe-Easy Tank
+    Then Go to Product detail page with product name Breathe-Easy Tank
 

@@ -53,7 +53,7 @@ public class MyAccountPage extends BasePage {
         this.actionHelper.click(By.xpath(XPATH_EDIT_BILLING));
     }
     public void fillBillingAddress(String street, String city, String zip, String country){
-    this.actionHelper.clearAndSendKey(By.id(this.ID_STREET_ADDRESS),street);
+        this.actionHelper.clearAndSendKey(By.id(this.ID_STREET_ADDRESS),street);
         this.actionHelper.clearAndSendKey(By.id(this.ID_CITY),city);
         this.actionHelper.clearAndSendKey(By.id(this.ID_ZIP),zip);
         this.actionHelper.selectItemByVisibleText(By.name(this.NAME_INPUT_COUNTRY), country);
