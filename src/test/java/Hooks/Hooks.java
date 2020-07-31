@@ -1,9 +1,6 @@
 package Hooks;
 
-import Page.AddToWishListPage;
-import Page.CartPage;
-import Page.HomePage;
-import Page.LoginPage;
+import Page.*;
 import Ultilities.TestBasePage;
 import Ultilities.Waitting;
 import cucumber.api.Scenario;
@@ -28,6 +25,20 @@ public class Hooks {
         wishListPage.removeAllProductInWishList();
 
     }
+    @Before("@ClearCompareList")
+    public void openBrowserAndClearCompareList() {
+        System.out.println("before");
+        TestBasePage.openBrowser();
+        ComparePage comparePage=new ComparePage(TestBasePage.getDriver());
+        HomePage homepage=new HomePage(TestBasePage.getDriver());
+        LoginPage loginPage = new LoginPage(TestBasePage.getDriver());
+        homepage.Open().clickOnSignin();
+        loginPage.login("chuongpt@maillinator.com","123456a@");
+        loginPage.clickBtn();
+        comparePage.openComparePage();
+        comparePage.removeAllProductFromCompareList();
+
+    }
     @Before("@PlaceOrder")
     public void openBrowserAndCart() {
         System.out.println("before");
@@ -46,7 +57,7 @@ public class Hooks {
         System.out.println("before");
         TestBasePage.openBrowser();
     }
-    @Before("@ChangePass, @ChangeBilling, @wishlist, @sortPrice")
+    @Before("@ChangePass, @ChangeBilling, @wishlist,@sortprice")
     public void openBrowserWithLogin() {
         System.out.println("before");
         TestBasePage.openBrowser();
